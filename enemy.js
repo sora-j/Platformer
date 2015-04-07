@@ -1,26 +1,24 @@
-var Player = function() 
+var Enemy = function() 
 {
 	this.image = document.createElement("img");
+	this.x = canvas.width / 3;
+	this.y = canvas.height / 3;
 	
-	this.x = canvas.width / 2;
-	this.y = canvas.height / 2;
-	
-	this.width = 159;
-	this.height = 163;
+	this.width = 55;
+	this.height = 80;
 	
 	this.velocityX = 0;
 	this.velocityY = 0;
 	this.angularVelocity = 0;
 	this.rotation = 0;
 	
-	this.image.src = "hero.png";
-	
-	this.PLAYER_SPEED = 1;
+	this.isDead = false;
+	this.ENEMY_SPEED = 0.8
+	this.image.src = "enemy.fw.png";
 };
 
-//var player = new Player();
-
-Player.prototype.update = function(deltaTime)
+//var enemy = new Enemy();
+Enemy.prototype.update = function(deltaTime)
 {
 	//if( typeof(this.rotation) == "undefined" )
 		//this.rotation = 0; 				// hang on, where did this variable come from!
@@ -36,7 +34,7 @@ Player.prototype.update = function(deltaTime)
 	//this.rotation += deltaTime;	
 }
 
-Player.prototype.draw = function()
+Enemy.prototype.draw = function()
 {
 	context.save();
 		context.translate(this.x, this.y);
@@ -45,10 +43,3 @@ Player.prototype.draw = function()
 	context.restore();
 }
 
-function onKeyUp(event)
-{
-if(event.keyCode == KEY_UP)
-	{
-		playerShoot();
-	}
-}

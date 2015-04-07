@@ -41,27 +41,50 @@ var fpsCount = 0;
 var fpsTime = 0;
 
 // load an image to draw
-var chuckNorris = document.createElement("img");
-chuckNorris.src = "hero.png";
+//var chuckNorris = document.createElement("img");
+//chuckNorris.src = "hero.png";
 
 var player = new Player();
+var enemy = new Enemy();
 var keyboard = new Keyboard();
+
+
 
 function run()
 {
 	context.fillStyle = "#ccc";		
 	context.fillRect(0, 0, canvas.width, canvas.height);
-	
-	context.drawImage(chuckNorris, SCREEN_WIDTH/2 - chuckNorris.width/2, SCREEN_HEIGHT/2 - chuckNorris.height/2);
-	
+	       
 	var deltaTime = getDeltaTime();
 	
+	//context.drawImage(chuckNorris, SCREEN_WIDTH/2 - chuckNorris.width/2, SCREEN_HEIGHT/2 - chuckNorris.height/2);
+
 	player.update(deltaTime);
 	player.draw();
-
 	
+	enemy.update(deltaTime);
+	enemy.draw();
 
-		
+	if(bullet.isDead == false)
+	{
+		bullet.x += bullet.velocityX;
+		bullet.y += bullet.velocityY;
+		context.drawImage(bullet.image, bullet.x - bullet.width/2, bullet.y - bullet.height/2);
+		if(enemy.isDead == false)
+		{
+			var hit = intersects(bullet.x, bullet.y, bullet.width, bullet.height, enemy.x, enemy.y, enemy.width, enemy.height);
+			if(hit == true)
+			{
+				bullet.isDead = true;
+				enemy.isDead = true;
+			}
+		}
+		if(bullet.x < 0 || bullet.x > SCREEN_WIDTH || bullet.y < 0 || bullet.y > SCREEN_HEIGHT)
+		{
+			bullet.isDead = true;
+		}
+	}
+			
 		// update the frame counter 
 	fpsTime += deltaTime;
 	fpsCount++;
@@ -76,6 +99,10 @@ function run()
 	context.fillStyle = "#f00";
 	context.font="14px Arial";
 	context.fillText("FPS: " + fps, 5, 20, 100);
+	
+
+	
+	
 }
 
 
