@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="23" tilewidth="35" tileheight="35" nextobjectid="1">
+ <tileset firstgid="1" name="tileset" tilewidth="70" tileheight="70" spacing="2" margin="2">
+  <image source="tileset.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Background" width="50" height="23">
+  <data encoding="base64" compression="zlib">
+   eJzdVFsOwzAIy9F3gp55X5MmZBsDWVfFUuUoCY8Czlpn4GVwXO/6kP8qf9an4HogXw27CLY/xdRvZn9XnafxMvuIf/Vj1/kTmK0dPgWoDpMa7fTVYZQPOlvhDvKh7KrozmW257wPqg7KL6uNgyxn9aH8WYwOqr1Q8xrvsbzYbFV0gfJxgfrv9EDpOIvjarTDKJarm2ivesd66dxTULWOMZgWmKbROZsdd/YUo9gKWQ9iPsw27mUadHLKZkitHQ1lPermV/3fDK4/pYXpe5WxW390H3GMzfLq6ONO/CKvii6+96p9VHs7+A1bYuTJ
+  </data>
+ </layer>
+ <layer name="Extra" width="50" height="23">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQxXsHWgHYAHtZOhZQ3VXkA+m4RCXoKsrqAfaBtoBVAZqDJC4UIHSagPrHJqDrgESH2pguPhjFIyCUTAKRgFuMBB14hQcajtxiA9VMNj9s5iAfAcOcVzxhw/g00OOeeQAXP4ZBQMDjgwTGgAwBiHs
+  </data>
+ </layer>
+ <layer name="Ladders" width="50" height="23">
+  <data encoding="base64" compression="zlib">
+   eJzt0bENADAIwDD+PwceZGZloVLtCyIlAgAA/lXXAQx5HcDgx1v8YKMByhQCyg==
+  </data>
+ </layer>
+ <layer name="Platformers" width="50" height="23">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEOgCAMhWEOKl7ACLund+nUBNtUMIr/t7xFQm1CISUAgNcRWLNLlp6FvEBRWQftE+l5j7V/tUhmydX4nh7fo+fDqHOEOeRGWucUwPO+dD/qWq9q1++EVs7C+k/v/LX6Fp3jmzNPM2IQ3Q==
+  </data>
+ </layer>
+</map>
